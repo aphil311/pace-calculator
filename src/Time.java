@@ -2,7 +2,6 @@ public class Time {
 	private char units;
 	private int totalTime;
 	private int totalDistance;
-	private boolean
 	public Time(int min, int sec, int distance){
 		totalTime = min*60+sec;
 		if(distance < 4){
@@ -26,7 +25,7 @@ public class Time {
 	public void pushHour(int hour){
 		totalTime = totalTime+(hour*60*60);
 	}
-	public String getString(){
-		return (totalTime, distance);
+	public String toString(){
+		return ""+totalDistance+" "+totalTime;
 	}
 }
