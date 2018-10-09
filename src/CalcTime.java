@@ -4,9 +4,9 @@ public class CalcTime {
 		Scanner scan = new Scanner(System.in);
 		int distance, hr = 0, min, sec, tempInt, distanceSel;
 		boolean pushUnits = false, hours = false;
-                final boolean METRIC = true;
-                int tempS, tempM;
-                String tempStr;
+		final boolean METRIC = true;
+		int tempS, tempM;
+		String tempStr;
 		char units = 'a';
 		System.out.println("-------------");
 		System.out.println("| 1. 1600m  |");
@@ -41,30 +41,30 @@ public class CalcTime {
 					System.out.print("Selection: ");
 				}
 			}
-                       System.out.print("Distance: ");
-                       distance = scan.nextInt();
+			System.out.print("Distance: ");
+			distance = scan.nextInt();
 		}
 		switch(distanceSel){
 			case 1:	distance = 1600;
-				break;
+			break;
 			case 2: distance = 3200;
-				break;
+			break;
 			case 3:	distance = 5000;
-				break;
+			break;
 			case 4:	distance = 1609;
-				break;
+			break;
 			case 5: distance = 3218;
-				break;
+			break;
 			case 6: distance = 4828;
-				break;
+			break;
 			case 7:	distance = 21082;
-				break;
+			break;
 			case 8:	distance = 42164;
-				break;
-                               default:    distance = 1600;
-                                break;
+			break;
+   	default:    distance = 1600;
+    	break;
 		}
-                tempStr = null;
+		tempStr = null;
 		System.out.print("Time: ");
 		tempStr = scan.next();
 		if(tempStr.length() == 4){
@@ -86,31 +86,30 @@ public class CalcTime {
 			min = 0;
 			sec = 0;
 		}
-			Time time1 = new Time(min, sec, distance);
+		Time time1 = new Time(min, sec, distance);
 		if(pushUnits){
 			time1.pushUnits(units);
 		}
 		if(hours){
 			time1.pushHour(hr);
 		}
-                if(METRIC){
-                    tempM = time1.sixteen00()/60;
-                    tempS = time1.sixteen00()%60;
-                    if(tempS<9){
-                        System.out.println("1600: "+tempM+":0"+tempS);
-                    }
-                    else{
-                        System.out.println("1600: "+tempM+":"+tempS);
-                    }
-                    tempS = time1.fiveK()%60;
-                    tempM = time1.fiveK()/60;
-                    if(tempS<9){
-                        System.out.println("5000: "+tempM+":0"+tempS);
-                    }
-                    else{
-                        System.out.println("5000: "+tempM+":"+tempS);
-                    }
-                }
-                
+		if(METRIC){
+			tempM = time1.sixteen00()/60;
+			tempS = time1.sixteen00()%60;
+			if(tempS<9){
+				System.out.println("1600: "+tempM+":0"+tempS);
+			}
+			else{
+				System.out.println("1600: "+tempM+":"+tempS);
+			}
+			tempS = time1.fiveK()%60;
+			tempM = time1.fiveK()/60;
+			if(tempS<9){
+				System.out.println("5000: "+tempM+":0"+tempS);
+			}
+			else{
+				System.out.println("5000: "+tempM+":"+tempS);
+			}
+		}
 	}
 }

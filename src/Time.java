@@ -4,15 +4,15 @@ public class Time {
 	private int totalDistance;
 	public Time(int min, int sec, int distance){
 		totalTime = min*60+sec;
-                totalDistance = distance;
+    totalDistance = distance;
 	}
-        public int sixteen00(){
+  public int sixteen00(){
 		double num = 1600.0/(double)totalDistance;
-                return (int)(Math.pow(num, 1.06)*totalTime);
+    return (int)(Math.pow(num, 1.06)*totalTime);
 	}
 	public int fiveK(){
 		double num = 5000.0/(double)totalDistance;
-                return (int)(Math.pow(num, 1.06)*totalTime);
+    return (int)(Math.pow(num, 1.06)*totalTime);
 	}
 	public int getTime(){
 		return totalTime;
@@ -28,12 +28,11 @@ public class Time {
 		totalTime = totalTime+(hour*60*60);
 	}
 	public String toString(){
-                int min = totalTime/60;
-                int sec = totalTime%60;
-                if(sec<9)
-                    return totalDistance+" | "+min+":0"+sec;
-                else
-                    return totalDistance+" | "+min+":"+sec;
-                    
+    int min = totalTime/60;
+    int sec = totalTime%60;
+    if(sec<9)
+      return totalDistance+" | "+min+":0"+sec;
+    else
+      return totalDistance+" | "+min+":"+sec;                
 	}
 }
