@@ -2,10 +2,10 @@ import java.util.Scanner;
 public class CalcTime {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		int distance, hr, min, sec, tempInt, distanceSel;
+		int distance, hr = 0, min, sec, tempInt, distanceSel;
 		boolean pushUnits = false, hours = false;
 		String tempStr;
-		char units;
+		char units = 'a';
 		System.out.println("-------------");
 		System.out.println("| 1. 1600m  |");
 		System.out.println("| 2. 3200m  |");
@@ -39,6 +39,8 @@ public class CalcTime {
 					System.out.print("Selection: ");
 				}
 			}
+                        System.out.print("Distance: ");
+                        distance = scan.nextInt();
 		}
 		switch(distanceSel){
 			case 1:	distance = 1600;
@@ -57,8 +59,8 @@ public class CalcTime {
 							break;
 			case 8:	distance = 42164;
 							break;
-			case 9: distance = tempInt;
-							break;
+                        default:    distance = 1600;
+                                                        break;
 		}
 		System.out.print("Time: ");
 		tempStr = scan.nextLine();
