@@ -6,7 +6,7 @@ public class Time {
 		totalTime = min*60+sec;
 		if(distance < 4){
 			if(units == 'i'){
-				
+
 			}
 			else
 				System.out.print("");
@@ -21,6 +21,8 @@ public class Time {
 			units = iOrE;
 		else
 			System.out.println("Error: Not a valid character");
-		
+	}
+	public void pushHour(int hour){
+		totalTime = totalTime+(hour*60*60);
 	}
 }
