@@ -4,13 +4,7 @@ public class Time {
 	private int totalDistance;
 	public Time(int min, int sec, int distance){
 		totalTime = min*60+sec;
-		if(distance < 4){
-			if(units == 'i'){
-
-			}
-			else
-				System.out.print("");
-		}
+                totalDistance = distance;
 	}
 	public int getTime(){
 		return totalTime;
