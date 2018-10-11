@@ -1,11 +1,14 @@
 import java.util.Scanner;
 public class CalcTime {
 	public static void main(String[] args) {
+		// Objects
 		Scanner scan = new Scanner(System.in);
-		int distance, hr = 0, min, sec, tempInt, distanceSel;
+		// Variables
+		int distance, min, sec, tempInt, distanceSel;
+		int hr = 0;																				// In case not initialized
 		boolean pushUnits = false, hours = false;
-		final boolean METRIC = true;
-		int tempS, tempM;
+		final boolean METRIC = true;											// Toggles meters/miles
+		int tempS, tempM;																	// Allows cycling times
 		String tempStr;
 		char units = 'a';
 		System.out.println("-------------");
@@ -21,8 +24,10 @@ public class CalcTime {
 		System.out.println("-------------");
 		System.out.print("Selection: ");
 		distanceSel =  scan.nextInt();
+		// Custom distance
 		if(distanceSel == 9){
 			pushUnits = true;
+			// Menu
 			System.out.println("-------------");
 			System.out.println("| 1. Meters |");
 			System.out.println("| 2. Miles  |");
@@ -36,9 +41,11 @@ public class CalcTime {
 				units = 'i';
 			}
 			else{
+				// Error Catching
 				while((tempInt!=1)&&(tempInt!=2)){
 					System.out.println("Please select either 1 or 2.");
 					System.out.print("Selection: ");
+					tempInt = scan.nextInt();
 				}
 			}
 			System.out.print("Distance: ");
@@ -51,22 +58,23 @@ public class CalcTime {
 			break;
 			case 3:	distance = 5000;
 			break;
-			case 4:	distance = 1609;
+			case 4:	distance = 1609;		// One Mile
 			break;
-			case 5: distance = 3218;
+			case 5: distance = 3218;		// Two Mile
 			break;
-			case 6: distance = 4828;
+			case 6: distance = 4828;		// Three Mile
 			break;
-			case 7:	distance = 21082;
+			case 7:	distance = 21082;		// Half Marathon
 			break;
-			case 8:	distance = 42164;
+			case 8:	distance = 42164;		// Full Marathon
 			break;
-   	default:    distance = 1600;
+   		default:distance = 5000;		// Defaults to a 5k for XC season
     	break;
 		}
 		tempStr = null;
 		System.out.print("Time: ");
 		tempStr = scan.next();
+		// Seperates given time into hours, minutes, and seconds
 		if(tempStr.length() == 4){
 			min = Integer.parseInt(tempStr.substring(0,1));
 			sec = Integer.parseInt(tempStr.substring(2,4));
@@ -82,17 +90,23 @@ public class CalcTime {
 			hours = true;
 		}
 		else {
+			// Error Catching
 			System.out.println("Not a valid time");
 			min = 0;
 			sec = 0;
 		}
+		// Object Initialization
 		Time time1 = new Time(min, sec, distance);
+		// If custom distance
 		if(pushUnits){
 			time1.pushUnits(units);
 		}
+		// If marathon/half marathon
 		if(hours){
 			time1.pushHour(hr);
 		}
+
+		// Prints
 		if(METRIC){
 			tempM = time1.sixteen00()/60;
 			tempS = time1.sixteen00()%60;
