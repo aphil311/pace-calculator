@@ -6,13 +6,33 @@ public class Time {
 		totalTime = min*60+sec;
     totalDistance = distance;
 	}
-  public int sixteen00(){
+  private int sixteen00(){
 		double num = 1600.0/(double)totalDistance;
     return (int)(Math.pow(num, 1.06)*totalTime);
 	}
-	public int fiveK(){
+	public String get1600(){
+		int tempM = this.sixteen00()/60;
+		int tempS = this.sixteen00()%60;
+		if(tempS<9){
+			return("1600: "+tempM+":0"+tempS);
+		}
+		else{
+			return ("1600: "+tempM+":"+tempS);
+		}
+	}
+	private int fiveK(){
 		double num = 5000.0/(double)totalDistance;
     return (int)(Math.pow(num, 1.06)*totalTime);
+	}
+	public int get5k(){
+		int tempS = this.fiveK()%60;
+		int tempM = this.fiveK()/60;
+		if(tempS<9){
+			System.out.println("5000: "+tempM+":0"+tempS);
+		}
+		else{
+			System.out.println("5000: "+tempM+":"+tempS);
+		}
 	}
 	public int getTime(){
 		return totalTime;
@@ -33,6 +53,6 @@ public class Time {
     if(sec<9)
       return totalDistance+" | "+min+":0"+sec;
     else
-      return totalDistance+" | "+min+":"+sec;                
+      return totalDistance+" | "+min+":"+sec;
 	}
 }

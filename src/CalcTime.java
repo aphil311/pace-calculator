@@ -108,22 +108,8 @@ public class CalcTime {
 
 		// Prints
 		if(METRIC){
-			tempM = time1.sixteen00()/60;
-			tempS = time1.sixteen00()%60;
-			if(tempS<9){
-				System.out.println("1600: "+tempM+":0"+tempS);
-			}
-			else{
-				System.out.println("1600: "+tempM+":"+tempS);
-			}
-			tempS = time1.fiveK()%60;
-			tempM = time1.fiveK()/60;
-			if(tempS<9){
-				System.out.println("5000: "+tempM+":0"+tempS);
-			}
-			else{
-				System.out.println("5000: "+tempM+":"+tempS);
-			}
+			time1.get1600();
+
 		}
 	}
 }
