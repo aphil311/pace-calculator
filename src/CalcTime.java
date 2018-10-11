@@ -108,8 +108,8 @@ public class CalcTime {
 
 		// Prints
 		if(METRIC){
-			time1.get1600();
-
+			System.out.println(time1.get1600());
+			System.out.println(time1.get5k());
 		}
 	}
 }
