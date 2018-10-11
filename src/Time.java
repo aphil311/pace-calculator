@@ -24,7 +24,7 @@ public class Time {
 		double num = 3200.0/(double)totalDistance;
     return (int)(Math.pow(num, 1.06)*totalTime);
 	}
-	public String get1600(){
+	public String get3200(){
 		int tempM = this.thirty200()/60;
 		int tempS = this.thirty200()%60;
 		if(tempS<9){
@@ -53,13 +53,25 @@ public class Time {
     return (int)(Math.pow(num, 1.06)*totalTime);
 	}
 	public String getHalf(){
-		int tempM = this.halfMarathon()/60;
-		int tempS = this.halfMarathon()%60;
+		int tempS = this.halfMarathon() % 60;
+    int totalMinutes = this.halfMarathon() / 60;
+    int tempM = totalMinutes % 60;
+    int tempH = totalMinutes / 60;
 		if(tempS<9){
-			return("13.1: "+tempM+":0"+tempS);
+			if(tempM<9){
+				return("13.1: "+tempH+":0"+tempM+":0"+tempS);
+			}
+			else{
+				return("13.1: "+tempH+":"+tempM+":0"+tempS);
+			}
 		}
 		else{
-			return("13.1: "+tempM+":"+tempS);
+			if(tempM<9){
+				return("13.1: "+tempH+":0"+tempM+":"+tempS);
+			}
+			else{
+				return("13.1: "+tempH+":"+tempM+":"+tempS);
+			}
 		}
 	}
 	private int fullMarathon(){
@@ -67,13 +79,25 @@ public class Time {
     return (int)(Math.pow(num, 1.06)*totalTime);
 	}
 	public String getFull(){
-		int tempM = this.fullMarathon()/60;
-		int tempS = this.fullMarathon()%60;
+		int tempS = this.fullMarathon() % 60;
+    int totalMinutes = this.fullMarathon() / 60;
+    int tempM = totalMinutes % 60;
+    int tempH = totalMinutes / 60;
 		if(tempS<9){
-			return("26.2: "+tempM+":0"+tempS);
+			if(tempM<9){
+				return("26.2: "+tempH+":0"+tempM+":0"+tempS);
+			}
+			else{
+				return("26.2: "+tempH+":"+tempM+":0"+tempS);
+			}
 		}
 		else{
-			return("26.2: "+tempM+":"+tempS);
+			if(tempM<9){
+				return("26.2: "+tempH+":0"+tempM+":"+tempS);
+			}
+			else{
+				return("26.2: "+tempH+":"+tempM+":"+tempS);
+			}
 		}
 	}
 	public int getTime(){
