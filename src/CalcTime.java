@@ -108,8 +108,16 @@ public class CalcTime {
 
 		// Prints
 		if(METRIC){
-			System.out.println(time1.get1600());
-			System.out.println(time1.get5k());
+			if(distance!=1600)
+				System.out.println(time1.get1600());
+			if(distance!=3200)
+				System.out.println(time1.get3200());
+			if(distance!=5000)
+				System.out.println(time1.get5k());
+			if(distance!=21082)
+				System.out.println(time1.getHalf());
+			if(distance!=42164)
+				System.out.println(time1.getFull());
 		}
 	}
 }
