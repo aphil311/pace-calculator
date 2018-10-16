@@ -51,26 +51,7 @@ public class CalcTime {
 			System.out.print("Distance: ");
 			distance = scan.nextInt();
 		}
-		switch(distanceSel){
-			case 1:	distance = 1600;
-			break;
-			case 2: distance = 3200;
-			break;
-			case 3:	distance = 5000;
-			break;
-			case 4:	distance = 1609;		// One Mile
-			break;
-			case 5: distance = 3218;		// Two Mile
-			break;
-			case 6: distance = 4828;		// Three Mile
-			break;
-			case 7:	distance = 21082;		// Half Marathon
-			break;
-			case 8:	distance = 42164;		// Full Marathon
-			break;
-   		default:distance = 5000;		// Defaults to a 5k for XC season
-    	break;
-		}
+		distance = Time.dSelection(distanceSel);
 		tempStr = null;
 		System.out.print("Time: ");
 		tempStr = scan.next();
@@ -114,6 +95,18 @@ public class CalcTime {
 				System.out.println(time1.get3200());
 			if(distance!=5000)
 				System.out.println(time1.get5k());
+			if(distance!=21082)
+				System.out.println(time1.getHalf());
+			if(distance!=42164)
+				System.out.println(time1.getFull());
+		}
+		else{
+			if(distance!=1609)
+				System.out.println(time1.get1M());
+			if(distance!=3218)
+				System.out.println(time1.get2M());
+			if(distance!=4828)
+				System.out.println(time1.get3M());
 			if(distance!=21082)
 				System.out.println(time1.getHalf());
 			if(distance!=42164)
