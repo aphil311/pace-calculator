@@ -2,13 +2,13 @@ public class Time {
 	private char units;
 	private int totalTime;
 	private int totalDistance;
-	private int distances[] = {};
+	private int distances[] = {1600.0, 3200.0, 5000.0, 1609.0, 3218.0, 4828.0, 21082.0, 42164.0};
 	public Time(int min, int sec, int distance){
 		totalTime = min*60+sec;
     totalDistance = distance;
 	}
   private int sixteen00(){
-		double num = 1600.0/(double)totalDistance;
+		double num = distances[0]/(double)totalDistance;
     return (int)(Math.pow(num, 1.06)*totalTime);
 	}
 	public String get1600(){
@@ -22,7 +22,7 @@ public class Time {
 		}
 	}
 	private int thirty200(){
-		double num = 3200.0/(double)totalDistance;
+		double num = distances[1]/(double)totalDistance;
     return (int)(Math.pow(num, 1.06)*totalTime);
 	}
 	public String get3200(){
@@ -36,7 +36,7 @@ public class Time {
 		}
 	}
 	private int fiveK(){
-		double num = 5000.0/(double)totalDistance;
+		double num = distances[2]/(double)totalDistance;
     return (int)(Math.pow(num, 1.06)*totalTime);
 	}
 	public String get5k(){
@@ -50,7 +50,7 @@ public class Time {
 		}
 	}
 	private int oneM(){
-		double num = 1609.0/(double)totalDistance;
+		double num = distances[3]/(double)totalDistance;
     return (int)(Math.pow(num, 1.06)*totalTime);
 	}
 	public String get1M(){
@@ -64,7 +64,7 @@ public class Time {
 		}
 	}
 	private int twoM(){
-		double num = 3218.0/(double)totalDistance;
+		double num = distances[4]/(double)totalDistance;
     return (int)(Math.pow(num, 1.06)*totalTime);
 	}
 	public String get2M(){
@@ -78,7 +78,7 @@ public class Time {
 		}
 	}
 	private int threeM(){
-		double num = 4828.0/(double)totalDistance;
+		double num = distances[5]/(double)totalDistance;
     return (int)(Math.pow(num, 1.06)*totalTime);
 	}
 	public String get5k(){
@@ -92,7 +92,7 @@ public class Time {
 		}
 	}
 	private int halfMarathon(){
-		double num = 21082.0/(double)totalDistance;
+		double num = distances[6]/(double)totalDistance;
     return (int)(Math.pow(num, 1.06)*totalTime);
 	}
 	public String getHalf(){
@@ -118,7 +118,7 @@ public class Time {
 		}
 	}
 	private int fullMarathon(){
-		double num = 42164.0/(double)totalDistance;
+		double num = distances[7]/(double)totalDistance;
     return (int)(Math.pow(num, 1.06)*totalTime);
 	}
 	public String getFull(){
