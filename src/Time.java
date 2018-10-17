@@ -2,6 +2,7 @@ public class Time {
 	private char units;
 	private int totalTime;
 	private int totalDistance;
+	private int distances[] = {};
 	public Time(int min, int sec, int distance){
 		totalTime = min*60+sec;
     totalDistance = distance;
