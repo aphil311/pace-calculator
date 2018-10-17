@@ -88,29 +88,7 @@ public class CalcTime {
 		}
 
 		// Prints
-		if(METRIC){
-			if(distance!=1600)
-				System.out.println(time1.get1600());
-			if(distance!=3200)
-				System.out.println(time1.get3200());
-			if(distance!=5000)
-				System.out.println(time1.get5k());
-			if(distance!=21082)
-				System.out.println(time1.getHalf());
-			if(distance!=42164)
-				System.out.println(time1.getFull());
+		for(int i = 0; i<time1.distances.lenth; i++){
+			System.out.println(getTime(i));
 		}
-		else{
-			if(distance!=1609)
-				System.out.println(time1.get1M());
-			if(distance!=3218)
-				System.out.println(time1.get2M());
-			if(distance!=4828)
-				System.out.println(time1.get3M());
-			if(distance!=21082)
-				System.out.println(time1.getHalf());
-			if(distance!=42164)
-				System.out.println(time1.getFull());
-		}
-	}
 }
