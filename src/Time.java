@@ -1,8 +1,9 @@
 public class Time {
+	// Instance data
 	private char units;
 	private int totalTime;
 	private int totalDistance;
-	public double distances[] = {1600.0, 3200.0, 5000.0, 1609.0, 3218.0, 4828.0, 21082.0, 42164.0};
+	private double distances[] = {1600.0, 3200.0, 5000.0, 1609.0, 3218.0, 4828.0, 21082.0, 42164.0};
 	private String distanceS[] = {"1600", "3200", "5000", "1 Mile", "2 Mile", "3 Mile", "Half", "Full"};
 	public Time(int min, int sec, int distance){
 		totalTime = min*60+sec;
@@ -76,7 +77,7 @@ public class Time {
 			break;
 			case 7:	tempDistance = 21082;		// Half Marathon
 			break;
-			case 8:	tempDistance =  42164;		// Full Marathon
+			case 8:	tempDistance =  42164;	// Full Marathon
 			break;
    		default:tempDistance = 5000;		// Defaults to a 5k for XC season
     	break;
