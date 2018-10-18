@@ -7,11 +7,9 @@ public class CalcTime {
 		int distance, min, sec, tempInt, distanceSel;
 		int hr = 0;																				// In case not initialized
 		boolean pushUnits = false, hours = false;
-		final boolean METRIC = true;											// Toggles meters/miles
-		int tempS, tempM;																	// Allows cycling times
 		String tempStr;
 		char units = 'a';																	// Means nothing
-		
+
 		// Distance menu
 		System.out.println("-------------");
 		System.out.println("| 1. 1600m  |");
@@ -57,6 +55,7 @@ public class CalcTime {
 		tempStr = null;
 		System.out.print("Time: ");
 		tempStr = scan.next();
+		scan.close();
 		// Seperates given time into hours, minutes, and seconds
 		if(tempStr.length() == 4){
 			min = Integer.parseInt(tempStr.substring(0,1));
