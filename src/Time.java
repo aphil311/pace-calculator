@@ -60,26 +60,28 @@ public class Time {
 		totalTime = totalTime+(hour*60*60);
 	}
 	public static int dSelection(int selection){
+		int tempDistance;
 		switch(selection){
-			case 1:	return 1600;
+			case 1:	tempDistance = 1600;
 			break;
-			case 2: return 3200;
+			case 2: tempDistance = 3200;
 			break;
-			case 3:	return 5000;
+			case 3:	tempDistance = 5000;
 			break;
-			case 4:	return 1609;		// One Mile
+			case 4:	tempDistance = 1609;		// One Mile
 			break;
-			case 5: return 3218;		// Two Mile
+			case 5: tempDistance = 3218;		// Two Mile
 			break;
-			case 6: return 4828;		// Three Mile
+			case 6: tempDistance = 4828;		// Three Mile
 			break;
-			case 7:	return 21082;		// Half Marathon
+			case 7:	tempDistance = 21082;		// Half Marathon
 			break;
-			case 8:	return 42164;		// Full Marathon
+			case 8:	tempDistance =  42164;		// Full Marathon
 			break;
-   		default:return 5000;		// Defaults to a 5k for XC season
+   		default:tempDistance = 5000;		// Defaults to a 5k for XC season
     	break;
 		}
+		return tempDistance;
 	}
 	public String toString(){
     int min = totalTime/60;
