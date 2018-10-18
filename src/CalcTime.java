@@ -10,7 +10,9 @@ public class CalcTime {
 		final boolean METRIC = true;											// Toggles meters/miles
 		int tempS, tempM;																	// Allows cycling times
 		String tempStr;
-		char units = 'a';
+		char units = 'a';																	// Means nothing
+		
+		// Distance menu
 		System.out.println("-------------");
 		System.out.println("| 1. 1600m  |");
 		System.out.println("| 2. 3200m  |");
@@ -88,8 +90,8 @@ public class CalcTime {
 		}
 
 		// Prints
-		for(int i = 0; i<time1.distances.lenth; i++){
-			System.out.println(getTime(i));
+		for(int i = 0; i<8; i++){
+			System.out.println(time1.getTime(i));
 		}
 	}
 }
