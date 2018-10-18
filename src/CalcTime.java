@@ -91,4 +91,5 @@ public class CalcTime {
 		for(int i = 0; i<time1.distances.lenth; i++){
 			System.out.println(getTime(i));
 		}
+	}
 }
