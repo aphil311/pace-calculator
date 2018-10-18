@@ -2,7 +2,7 @@ public class Time {
 	private char units;
 	private int totalTime;
 	private int totalDistance;
-	private int distances[] = {1600.0, 3200.0, 5000.0, 1609.0, 3218.0, 4828.0, 21082.0, 42164.0};
+	public double distances[] = {1600.0, 3200.0, 5000.0, 1609.0, 3218.0, 4828.0, 21082.0, 42164.0};
 	private String distanceS[] = {"1600", "3200", "5000", "1 Mile", "2 Mile", "3 Mile", "Half", "Full"};
 	public Time(int min, int sec, int distance){
 		totalTime = min*60+sec;
