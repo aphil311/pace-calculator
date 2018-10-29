@@ -1,3 +1,9 @@
+//============================================================================
+// ~File Name: Time.java
+//
+// ~Purpose: Take a time and distance, and use it to return equivalent times
+//============================================================================
+
 public class Time {
 	// Instance data
 	private char units;
@@ -5,14 +11,26 @@ public class Time {
 	private int totalDistance;
 	private double distances[] = {1600.0, 3200.0, 5000.0, 1609.0, 3218.0, 4828.0, 21082.0, 42164.0};
 	private String distanceS[] = {"1600", "3200", "5000", "1 Mile", "2 Mile", "3 Mile", "Half", "Full"};
+
+	//--------------------------------------------------------------------------
+	// Constructor -- Assigns variables for time and distance
+	//--------------------------------------------------------------------------
 	public Time(int min, int sec, int distance){
 		totalTime = min*60+sec;
     totalDistance = distance;
 	}
+
+	//--------------------------------------------------------------------------
+	// Calculate -- Returns total seconds per race
+	//--------------------------------------------------------------------------
   private int calculate(int x){
 		double num = distances[x]/(double)totalDistance;
     return (int)(Math.pow(num, 1.06)*totalTime);
 	}
+
+	//--------------------------------------------------------------------------
+	// GetTime -- Divides total seconds out to larger units
+	//--------------------------------------------------------------------------
 	public String getTime(int x){
 		if((distanceS[x].equals("Half"))||(distanceS[x].equals("Full"))){
 			int tempS = this.calculate(x) % 60;
@@ -57,9 +75,17 @@ public class Time {
 		else
 			System.out.println("Error: Not a valid character");
 	}
+
+	//--------------------------------------------------------------------------
+	// PushHour -- Adds hours from main class to Time class
+	//--------------------------------------------------------------------------
 	public void pushHour(int hour){
 		totalTime = totalTime+(hour*60*60);
 	}
+
+	//--------------------------------------------------------------------------
+	// DSelection -- Returns the distance selected by the user
+	//--------------------------------------------------------------------------
 	public static int dSelection(int selection){
 		int tempDistance;
 		switch(selection){
@@ -84,6 +110,10 @@ public class Time {
 		}
 		return tempDistance;
 	}
+
+	//--------------------------------------------------------------------------
+	// ToString -- Returns origional distance and time
+	//--------------------------------------------------------------------------
 	public String toString(){
     int min = totalTime/60;
     int sec = totalTime%60;
