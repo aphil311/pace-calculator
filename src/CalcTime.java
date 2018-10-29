@@ -1,3 +1,11 @@
+//===========================================================================
+// ~File Name: CalcTime.java
+//
+// ~Author: APhil311
+//
+// ~Purpose: Drives the Time class
+//============================================================================
+
 import java.util.Scanner;
 public class CalcTime {
 	public static void main(String[] args) {
@@ -11,27 +19,14 @@ public class CalcTime {
 		char units = 'a';																	// Means nothing
 
 		// Distance menu
-		System.out.println("-------------");
-		System.out.println("| 1. 1600m  |");
-		System.out.println("| 2. 3200m  |");
-		System.out.println("| 3. 5000m  |");
-		System.out.println("| 4. 1 Mile |");
-		System.out.println("| 5. 2 Mile |");
-		System.out.println("| 6. 3 Mile |");
-		System.out.println("| 7. Half   |");
-		System.out.println("| 8. Full   |");
-		System.out.println("| 9. Custom |");
-		System.out.println("-------------");
+		Template.distanceMenu();
 		System.out.print("Selection: ");
 		distanceSel =  scan.nextInt();
 		// Custom distance
 		if(distanceSel == 9){
 			pushUnits = true;
 			// Menu
-			System.out.println("-------------");
-			System.out.println("| 1. Meters |");
-			System.out.println("| 2. Miles  |");
-			System.out.println("-------------");
+			Template.unitMenu();
 			System.out.print("Selection");
 			tempInt = scan.nextInt();
 			if(tempInt == 1){
